@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Api", "ImageManipulation.Api\ImageManipulation.Api.csproj", "{0C831BAB-5361-4948-AC27-500681E3BE91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Application", "ImageManipulation.Application\ImageManipulation.Application.csproj", "{649E9B70-040C-46FE-BF4E-9859AE21A964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Domain", "ImageManipulation.Domain\ImageManipulation.Domain.csproj", "{83AB1719-75DA-4D95-A880-9B39BE88C490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManipulation.Infrastructure", "ImageManipulation.Infrastructure\ImageManipulation.Infrastructure.csproj", "{A307BB70-1900-4627-A6A5-7F46BF5B38C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C831BAB-5361-4948-AC27-500681E3BE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C831BAB-5361-4948-AC27-500681E3BE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C831BAB-5361-4948-AC27-500681E3BE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C831BAB-5361-4948-AC27-500681E3BE91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649E9B70-040C-46FE-BF4E-9859AE21A964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649E9B70-040C-46FE-BF4E-9859AE21A964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649E9B70-040C-46FE-BF4E-9859AE21A964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649E9B70-040C-46FE-BF4E-9859AE21A964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83AB1719-75DA-4D95-A880-9B39BE88C490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83AB1719-75DA-4D95-A880-9B39BE88C490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83AB1719-75DA-4D95-A880-9B39BE88C490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83AB1719-75DA-4D95-A880-9B39BE88C490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A307BB70-1900-4627-A6A5-7F46BF5B38C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A307BB70-1900-4627-A6A5-7F46BF5B38C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A307BB70-1900-4627-A6A5-7F46BF5B38C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A307BB70-1900-4627-A6A5-7F46BF5B38C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
