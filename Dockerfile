@@ -6,6 +6,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["ImageManipulation.Api/ImageManipulation.Api.csproj", "ImageManipulation.Api/"]
+COPY ["ImageManipulation.Application/ImageManipulation.Application.csproj", "ImageManipulation.Application/"]
+COPY ["ImageManipulation.Domain/ImageManipulation.Domain.csproj", "ImageManipulation.Domain/"]
+COPY ["ImageManipulation.Infrastructure/ImageManipulation.Infrastructure.csproj", "ImageManipulation.Infrastructure/"]
 RUN dotnet restore "ImageManipulation.Api/ImageManipulation.Api.csproj"
 COPY . .
 WORKDIR "/src/ImageManipulation.Api"

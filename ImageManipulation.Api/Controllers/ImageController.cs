@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ImageManipulation.Api.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("image")]
 public class ImageController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -16,7 +16,8 @@ public class ImageController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost(Name = "distort")]
+    [HttpPost]
+    [Route("distort")]
     public async Task<IActionResult> Distort(DistortDto distort)
     {
         if (string.IsNullOrEmpty(distort.ImageAsBase64))
