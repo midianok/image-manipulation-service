@@ -5,17 +5,15 @@ using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
+builder.Services.AddHttpLogging(_ => { });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(ImageDistortionHandler).Assembly);
-builder.Services.AddTransient<IImageService, ImageService>();
+builder.Services.AddTransient<IDistortionService, DistortionService>();
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseHttpLogging();
 app.MapControllers();
 app.Run();

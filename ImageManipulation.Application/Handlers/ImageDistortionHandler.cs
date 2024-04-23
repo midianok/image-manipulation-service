@@ -6,11 +6,11 @@ namespace ImageManipulation.Application.Handlers;
 
 public class ImageDistortionHandler : IRequestHandler<ImageDistortionQuery, ImageDistortionQueryResult>
 {
-    private readonly IImageService _imageService;
+    private readonly IDistortionService _distortionService;
 
-    public ImageDistortionHandler(IImageService imageService)
+    public ImageDistortionHandler(IDistortionService distortionService)
     {
-        _imageService = imageService;
+        _distortionService = distortionService;
     }
 
     public Task<ImageDistortionQueryResult> Handle(ImageDistortionQuery request, CancellationToken cancellationToken)
@@ -21,7 +21,7 @@ public class ImageDistortionHandler : IRequestHandler<ImageDistortionQuery, Imag
             throw new Exception($"{nameof(ImageDistortionQuery.ImageAsBase64)} is not valid Base64 string");
         }
 
-        var result = _imageService.Distort(buffer.ToArray());
+        var result = _distortionService.DistortImageAsync(buffer.ToArray());
         return Task.FromResult(new ImageDistortionQueryResult(result));
     }
 }

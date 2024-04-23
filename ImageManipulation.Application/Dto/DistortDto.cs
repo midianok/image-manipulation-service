@@ -2,5 +2,5 @@
 
 public class DistortDto
 {
-    public string? ImageAsBase64 { get; set; }
+    public string? Base64 { get; set; }
 }

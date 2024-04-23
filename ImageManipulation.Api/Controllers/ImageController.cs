@@ -17,15 +17,28 @@ public class ImageController : ControllerBase
     }
 
     [HttpPost]
-    [Route("distort")]
-    public async Task<IActionResult> Distort(DistortDto distort)
+    [Route("distort-image")]
+    public async Task<IActionResult> DistortImage(DistortDto distort)
     {
-        if (string.IsNullOrEmpty(distort.ImageAsBase64))
+        if (string.IsNullOrEmpty(distort.Base64))
         {
-            return BadRequest($"{nameof(DistortDto.ImageAsBase64)} is empty");
+            return BadRequest($"{nameof(DistortDto.Base64)} is empty");
         }
 
-        var result = await _mediator.Send(new ImageDistortionQuery(distort.ImageAsBase64));
+        var result = await _mediator.Send(new ImageDistortionQuery(distort.Base64));
+        return Ok(result);
+    }
+
+    [HttpPost]
+    [Route("distort-video")]
+    public async Task<IActionResult> DistortVideo(DistortDto distort)
+    {
+        if (string.IsNullOrEmpty(distort.Base64))
+        {
+            return BadRequest($"{nameof(DistortDto.Base64)} is empty");
+        }
+
+        var result = await _mediator.Send(new VideoDistortionQuery(distort.Base64));
         return Ok(result);
     }
 }
