@@ -2,10 +2,10 @@
 
 public class ImageDistortionQueryResult
 {
-    public ImageDistortionQueryResult(byte[] distortedImageAsBase64)
+    public ImageDistortionQueryResult(byte[] base64)
     {
-        DistortedImageAsBase64 = distortedImageAsBase64;
+        Base64 = base64;
     }
 
-    public byte[] DistortedImageAsBase64 { get; }
+    public byte[] Base64 { get; }
 }

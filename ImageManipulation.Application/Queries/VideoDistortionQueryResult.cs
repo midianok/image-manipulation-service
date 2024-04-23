@@ -2,10 +2,10 @@
 
 public class VideoDistortionQueryResult
 {
-    public VideoDistortionQueryResult(byte[] distortedVideoAsBase64)
+    public VideoDistortionQueryResult(byte[] base64)
     {
-        DistortedVideoAsBase64 = distortedVideoAsBase64;
+        Base64 = base64;
     }
 
-    public byte[] DistortedVideoAsBase64 { get; }
+    public byte[] Base64 { get; }
 }
