@@ -13,8 +13,7 @@ public class DistortionService : IDistortionService
         using var image = new MagickImage(imageBytes);
         var imageWidth = image.Width;
         var imageHeight = image.Height;
-
-        image.LiquidRescale(new MagickGeometry("40x40%!"));
+        image.LiquidRescale(new Percentage(40), new Percentage(40), 1, 0);
         image.Resize(imageWidth, imageHeight);
         return image.ToByteArray();
     }
@@ -37,8 +36,7 @@ public class DistortionService : IDistortionService
             {
                 process.StartInfo.CreateNoWindow = true;
                 process.StartInfo.FileName = "ffmpeg";
-                process.StartInfo.Arguments =
-                    $"-i {videFilePath} -r 15 {Path.Combine(fileTempDir, id.ToString())}_%d.png";
+                process.StartInfo.Arguments = $"-i {videFilePath} -r 15 {Path.Combine(fileTempDir, id.ToString())}_%d.png";
                 process.Start();
                 await process.WaitForExitAsync();
             }
@@ -48,15 +46,12 @@ public class DistortionService : IDistortionService
                 .ThenBy(x => x)
                 .Select(x => new MagickImage(x));
 
-            using var images = new MagickImageCollection(frames);
-
-
-            var result = new MagickImageCollection();
-            foreach (var image in images)
+            using var result = new MagickImageCollection();
+            foreach (var image in frames)
             {
                 var imageWidth = image.Width;
                 var imageHeight = image.Height;
-                image.LiquidRescale(new MagickGeometry("40x40%!"));
+                image.LiquidRescale(new Percentage(40), new Percentage(40), 1, 0);
                 image.Resize(imageWidth, imageHeight);
                 result.Add(image);
             }
