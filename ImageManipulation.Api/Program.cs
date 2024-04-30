@@ -4,6 +4,10 @@ using ImageManipulation.Infrastructure.Services;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 builder.Services.AddControllers();
 builder.Services.AddHttpLogging(_ => { });
 builder.Services.AddEndpointsApiExplorer();

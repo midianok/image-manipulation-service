@@ -10,16 +10,19 @@ namespace ImageManipulation.Api.Controllers;
 public class ImageController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly ILogger<ImageController> _logger;
 
-    public ImageController(IMediator mediator)
+    public ImageController(IMediator mediator, ILogger<ImageController> logger)
     {
         _mediator = mediator;
+        _logger = logger;
     }
 
     [HttpPost]
     [Route("distort-image")]
     public async Task<IActionResult> DistortImage(DistortDto distort)
     {
+        _logger.LogInformation("wpwpwp");
         if (string.IsNullOrEmpty(distort.Base64))
         {
             return BadRequest($"{nameof(DistortDto.Base64)} is empty");
