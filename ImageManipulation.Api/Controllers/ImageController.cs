@@ -19,6 +19,7 @@ public class ImageController : ControllerBase
     }
 
     [HttpPost]
+    [Produces(typeof(ImageDistortionQueryResult))]
     [Route("distort-image")]
     public async Task<IActionResult> DistortImage(DistortDto distort)
     {
@@ -33,6 +34,7 @@ public class ImageController : ControllerBase
     }
 
     [HttpPost]
+    [Produces(typeof(VideoDistortionQueryResult))]
     [Route("distort-video")]
     public async Task<IActionResult> DistortVideo(DistortDto distort)
     {
